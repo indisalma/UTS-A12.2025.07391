@@ -47,3 +47,46 @@ nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.c
 document.getElementById('contactForm').addEventListener('submit',event=>{event.preventDefault();const form=event.currentTarget;const feedback=document.getElementById('formFeedback');if(!form.checkValidity()){feedback.style.color='#ae554c';feedback.textContent='Mohon isi nama (min. 2 huruf), email yang valid, dan pesan (min. 10 huruf).';form.reportValidity();return;}feedback.style.color='#64846d';feedback.textContent='Terima kasih! Pesan demo kamu sudah berhasil divalidasi ♡ (Tidak dikirim ke server.)';form.reset();});
 document.getElementById('year').textContent=new Date().getFullYear();
 renderProducts();renderCart();
+// FORMULIR BOOTSTRAP
+
+const visitorForm = document.getElementById("visitorForm");
+
+visitorForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const nama = document.getElementById("visitorName").value.trim();
+
+    const alamat = document.getElementById("visitorAddress").value.trim();
+
+    const kota = document.getElementById("visitorCity").value;
+
+    const hobi = document.querySelectorAll(
+        'input[name="hobi"]:checked'
+    );
+
+    const feedback = document.getElementById("visitorFeedback");
+
+    if (nama === "" || alamat === "" || kota === "") {
+
+        feedback.textContent = "Mohon lengkapi semua data.";
+
+        feedback.style.color = "red";
+
+        return;
+    }
+
+    const daftarHobi = Array.from(hobi).map(function(item) {
+        return item.value;
+    });
+
+    feedback.textContent =
+        "Terima kasih, " + nama +
+        "! Data berhasil divalidasi. Kota: " + kota +
+        ". Hobi: " + (daftarHobi.join(", ") || "Tidak dipilih") + ".";
+
+    feedback.style.color = "green";
+
+    visitorForm.reset();
+
+});

@@ -277,3 +277,75 @@ body
     font-size: 13px;
     color: #604b3f;
 }
+.site-footer {
+    background-color: #e3edf0;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.footer-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-wrap p {
+    margin: 0;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #604b3f;
+}
+/* FORMULIR BOOTSTRAP */
+
+.bootstrap-section {
+    background-color: #e4eef0;
+    padding: 70px 0;
+}
+
+.bootstrap-form {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: #fffdf9;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #e6e2d8;
+}
+
+.bootstrap-form .form-label {
+    font-weight: 600;
+    color: #604b3f;
+}
+
+.bootstrap-form .form-control,
+.bootstrap-form .form-select {
+    border: 1px solid #d8d3ca;
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.bootstrap-form .form-control:focus,
+.bootstrap-form .form-select:focus {
+    border-color: #a8b9a0;
+    box-shadow: 0 0 0 3px rgba(168, 185, 160, 0.2);
+}
+
+.bootstrap-form .form-check-input:checked {
+    background-color: #829d8b;
+    border-color: #829d8b;
+}
+
+.bootstrap-form .btn-dark {
+    background-color: #604b3f;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+}
+
+
+@media (max-width: 600px) {
+    .bootstrap-form {
+        padding: 20px;
+    }
+}
